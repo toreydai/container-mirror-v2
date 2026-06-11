@@ -7,7 +7,7 @@ Parameters:
     Default: https://github.com/toreydai/container-mirror-v2
   EcrRegistry:
     Type: String
-    Default: 150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn
+    Default: 048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn
 
 Resources:
   CodeBuildRole:

@@ -1,6 +1,6 @@
 # container-mirror-v2
 
-将 Docker Hub、registry.k8s.io、public.ecr.aws、Quay、GHCR、GCR 等公共镜像自动同步至 AWS 中国区 ECR（`150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn`）。
+将 Docker Hub、registry.k8s.io、public.ecr.aws、Quay、GHCR、GCR 等公共镜像自动同步至 AWS 中国区 ECR（`<account-id>.dkr.ecr.cn-northwest-1.amazonaws.com.cn`）。
 
 ## 声明
 
@@ -10,7 +10,7 @@
 
 ## ECR 镜像路径
 
-ECR Registry：`150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn`
+ECR Registry：`<account-id>.dkr.ecr.cn-northwest-1.amazonaws.com.cn`
 
 | 源 | 原始路径示例 | ECR 路径前缀 |
 |----|------------|------------|
@@ -31,7 +31,7 @@ ECR Registry：`150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn`
 ```bash
 aws ecr get-login-password --region cn-northwest-1 | \
   docker login --username AWS --password-stdin \
-  150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn
+  <account-id>.dkr.ecr.cn-northwest-1.amazonaws.com.cn
 ```
 
 > EKS / Fargate 节点角色有 ECR 权限时无需手动登录。详细使用示例见 [docs/usage.md](docs/usage.md)。
@@ -42,7 +42,7 @@ aws ecr get-login-password --region cn-northwest-1 | \
 
 ```yaml
 - source: public.ecr.aws/docker/library/nginx:1.27
-  target: 150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/nginx:1.27
+  target: <account-id>.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/nginx:1.27
   type: image
 ```
 
@@ -65,6 +65,7 @@ quay.io/prometheus/prometheus
 
 | 文档 | 说明 |
 |---|---|
+| [docs/migration.md](docs/migration.md) | 在现有账号全新部署 v2 的操作手册 |
 | [docs/background.md](docs/background.md) | 与老仓库的关系、升级起因、设计思路和效果对比 |
 | [docs/architecture.md](docs/architecture.md) | 架构、两条同步流程、registry 映射 |
 | [docs/usage.md](docs/usage.md) | 镜像使用方式（Docker / K8s / Helm / ECS / Webhook） |

@@ -25,19 +25,24 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install pyyaml
-      - run: python3 scripts/tools.py validate regsync.yml
+      - name: Validate regsync.yml
+        run: |
+          sed "s|\${ECR_REGISTRY}|$ECR_REGISTRY|g" regsync.yml > /tmp/regsync-subst.yml
+          python3 scripts/tools.py validate /tmp/regsync-subst.yml
         env:
-          ECR_REGISTRY: ${{ vars.ECR_REGISTRY || '150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn' }}
+          ECR_REGISTRY: ${{ vars.ECR_REGISTRY }}
       - run: python3 scripts/tools.py check-requests required-images.txt
       - run: python3 scripts/tools.py lint-weekly required-images-weekly.txt
 
       - name: Update sync-list.txt
         if: github.event_name == 'push'
         run: |
-          python3 scripts/tools.py list regsync.yml sync-list.txt
+          sed "s|\${ECR_REGISTRY}|$ECR_REGISTRY|g" regsync.yml > /tmp/regsync-subst.yml
+          python3 scripts/tools.py list /tmp/regsync-subst.yml sync-list.txt
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add sync-list.txt
+
           if git diff --cached --quiet; then
             echo "sync-list.txt unchanged"
           else

@@ -10,8 +10,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 
-DEFAULT_ECR_REGISTRY = "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn"
-TARGET_REGISTRY = os.getenv("ECR_REGISTRY", DEFAULT_ECR_REGISTRY)
+TARGET_REGISTRY = os.getenv("ECR_REGISTRY", "")
 ALLOWED_PREFIXES = (
     "dockerhub/",
     "gcr/",

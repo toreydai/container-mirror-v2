@@ -36,7 +36,7 @@ container-mirror 2.0 是一套把海外公共镜像同步到中国区 ECR 的自
   │                                                                 │
   │  ┌──────────────────────────────────────────────────────────┐   │
   │  │  ECR Private Registry                                    │   │
-  │  │  150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn   │   │
+  │  │  <account-id>.dkr.ecr.cn-northwest-1.amazonaws.com.cn   │   │
   │  │                                                          │   │
   │  │  dockerhub/library/   dockerhub/<org>/   ecrpublic/      │   │
   │  │  registryk8sio/       gcr/   quay/   ghcr/               │   │
@@ -89,7 +89,7 @@ Weekly cron   → 同上（额外执行 build-weekly-config 生成每周配置�
 
    ```yaml
    - source: public.ecr.aws/docker/library/nginx:1.27
-     target: 150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/nginx:1.27
+     target: <account-id>.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/nginx:1.27
      type: image
    ```
 

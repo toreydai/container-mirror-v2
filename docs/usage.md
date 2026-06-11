@@ -18,14 +18,14 @@ ECR 私有 registry 需要认证。用户需要以下拉取权限：
 ```bash
 aws ecr get-login-password --region cn-northwest-1 \
   | docker login --username AWS --password-stdin \
-    150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn
+    <account-id>.dkr.ecr.cn-northwest-1.amazonaws.com.cn
 ```
 
 Docker：
 
 ```bash
 docker run --rm \
-  150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/busybox:1.36 \
+  <account-id>.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/busybox:1.36 \
   echo ok
 ```
 
@@ -34,7 +34,7 @@ docker-compose：
 ```yaml
 services:
   web:
-    image: 150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/nginx:1.27
+    image: <account-id>.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/nginx:1.27
     ports:
       - "8080:80"
 ```
@@ -51,7 +51,7 @@ metadata:
 spec:
   containers:
     - name: busybox
-      image: 150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/busybox:1.36
+      image: <account-id>.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/busybox:1.36
       command: ["/bin/sh", "-c", "echo ok && sleep 3600"]
 ```
 
@@ -68,7 +68,7 @@ kubectl get pod busybox-ecr-demo -o=jsonpath='{.spec.containers[0].image}'
 
 ```bash
 helm install my-release repo/chart \
-  --set image.registry=150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn \
+  --set image.registry=<account-id>.dkr.ecr.cn-northwest-1.amazonaws.com.cn \
   --set image.repository=dockerhub/library/nginx \
   --set image.tag=1.27
 ```
@@ -77,7 +77,7 @@ helm install my-release repo/chart \
 
 ```bash
 helm install my-release repo/chart \
-  --set image.repository=150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/registryk8sio/pause \
+  --set image.repository=<account-id>.dkr.ecr.cn-northwest-1.amazonaws.com.cn/registryk8sio/pause \
   --set image.tag=3.9
 ```
 
@@ -96,7 +96,7 @@ resources:
   - deployment.yaml
 images:
   - name: nginx
-    newName: 150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/nginx
+    newName: <account-id>.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/nginx
     newTag: "1.27"
 ```
 
@@ -116,7 +116,7 @@ kubectl apply -k .
   "containerDefinitions": [
     {
       "name": "web",
-      "image": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/nginx:1.27",
+      "image": "<account-id>.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/nginx:1.27",
       "essential": true,
       "portMappings": [{ "containerPort": 80, "protocol": "tcp" }]
     }

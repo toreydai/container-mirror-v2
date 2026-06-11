@@ -56,10 +56,12 @@ jobs:
 
       - name: Build weekly config and merge
         run: |
+          sed -i "s|\${ECR_REGISTRY}|$ECR_REGISTRY|g" regsync.yml
           python3 scripts/tools.py build-weekly-config required-images-weekly.txt /tmp/regsync-weekly.yml
           python3 scripts/tools.py merge regsync.yml /tmp/regsync-weekly.yml /tmp/regsync-step2.yml
           python3 scripts/tools.py merge required-images.txt /tmp/regsync-step2.yml /tmp/regsync-merged.yml
         env:
+          ECR_REGISTRY: ${{ vars.ECR_REGISTRY }}
           CHINA_AK: ${{ secrets.AWS_CHINA_ACCESS_KEY_ID }}
           CHINA_SK: ${{ secrets.AWS_CHINA_SECRET_ACCESS_KEY }}
 
