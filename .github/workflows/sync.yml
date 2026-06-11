@@ -1,0 +1,157 @@
+name: sync-container-mirror
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 18 * * 1"   # 每周一 UTC 18:00（北京周二 02:00）
+  push:
+    branches:
+      - main
+    paths:
+      - "regsync.yml"
+      - "required-images.txt"
+
+# 同一时间只允许一个 sync 运行，新触发自动取消旧的
+concurrency:
+  group: sync-container-mirror
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    outputs:
+      matrix: ${{ steps.split.outputs.matrix }}
+      report-bucket: ${{ steps.stack.outputs.bucket }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-${{ runner.os }}
+
+      - name: Install Python dependencies
+        run: pip install pyyaml boto3 -q
+
+      - name: Configure AWS credentials (China)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_CHINA_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_CHINA_SECRET_ACCESS_KEY }}
+          aws-region: cn-northwest-1
+
+      - name: Get report bucket name
+        id: stack
+        run: |
+          BUCKET=$(aws cloudformation describe-stacks \
+            --stack-name container-mirror \
+            --region cn-northwest-1 \
+            --query 'Stacks[0].Outputs[?OutputKey==`ReportBucket`].OutputValue' \
+            --output text)
+          echo "bucket=$BUCKET" >> "$GITHUB_OUTPUT"
+
+      - name: Build weekly config and merge
+        run: |
+          python3 scripts/tools.py build-weekly-config required-images-weekly.txt /tmp/regsync-weekly.yml
+          python3 scripts/tools.py merge regsync.yml /tmp/regsync-weekly.yml /tmp/regsync-step2.yml
+          python3 scripts/tools.py merge required-images.txt /tmp/regsync-step2.yml /tmp/regsync-merged.yml
+        env:
+          CHINA_AK: ${{ secrets.AWS_CHINA_ACCESS_KEY_ID }}
+          CHINA_SK: ${{ secrets.AWS_CHINA_SECRET_ACCESS_KEY }}
+
+      - name: Split by registry and upload to S3
+        id: split
+        run: |
+          SPLIT_OUT=$(python3 scripts/tools.py split /tmp/regsync-merged.yml /tmp/split/)
+          echo "$SPLIT_OUT"
+          for f in /tmp/split/*.yml; do
+            aws s3 cp "$f" \
+              "s3://${{ steps.stack.outputs.bucket }}/sync-configs/${{ github.run_id }}/$(basename "$f")" \
+              --region cn-northwest-1
+          done
+          MATRIX=$(echo "$SPLIT_OUT" | grep '^MATRIX=' | cut -d= -f2-)
+          echo "matrix=$MATRIX" >> "$GITHUB_OUTPUT"
+
+  sync:
+    needs: prepare
+    strategy:
+      matrix: ${{ fromJson(needs.prepare.outputs.matrix) }}
+      fail-fast: false
+    runs-on: ubuntu-latest
+    timeout-minutes: 130
+    steps:
+      - name: Configure AWS credentials (Tokyo)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_GLOBAL_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_GLOBAL_SECRET_ACCESS_KEY }}
+          aws-region: ap-northeast-1
+
+      - name: Trigger CodeBuild and wait
+        run: |
+          BUILD_ID=$(aws codebuild start-build \
+            --project-name container-mirror-sync \
+            --source-version ${{ github.sha }} \
+            --environment-variables-override \
+              name=REGISTRY_BATCH,value=${{ matrix.registry }},type=PLAINTEXT \
+              name=RUN_ID,value=${{ github.run_id }},type=PLAINTEXT \
+              name=REPORT_BUCKET,value=${{ needs.prepare.outputs.report-bucket }},type=PLAINTEXT \
+              name=GHCR_USER,value=${{ github.actor }},type=PLAINTEXT \
+              name=GHCR_TOKEN,value=${{ secrets.GHCR_TOKEN }},type=PLAINTEXT \
+            --query 'build.id' --output text)
+          echo "Build: $BUILD_ID (${{ matrix.registry }})"
+          while true; do
+            STATUS=$(aws codebuild batch-get-builds --ids "$BUILD_ID" \
+              --query 'builds[0].buildStatus' --output text)
+            echo "[$(date '+%H:%M:%S')] ${{ matrix.registry }}: $STATUS"
+            case $STATUS in
+              SUCCEEDED) echo "Sync completed"; exit 0 ;;
+              FAILED|FAULT|TIMED_OUT|STOPPED) echo "Build failed: $STATUS"; exit 1 ;;
+            esac
+            sleep 30
+          done
+
+  catalog:
+    needs: sync
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-catalog-${{ runner.os }}
+
+      - name: Configure AWS credentials (China)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_CHINA_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_CHINA_SECRET_ACCESS_KEY }}
+          aws-region: cn-northwest-1
+
+      - name: Generate catalog
+        run: |
+          pip install pyyaml boto3 -q
+          python3 scripts/tools.py catalog
+        env:
+          AWS_REGION: cn-northwest-1
+          CATALOG_OUTPUT_DIR: catalog
+
+      - name: Commit catalog if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add catalog/
+          if git diff --cached --quiet; then
+            echo "Catalog unchanged"
+          else
+            git commit -m "chore: update mirrored-images catalog [skip ci]"
+            git pull --rebase origin main
+            git push
+          fi

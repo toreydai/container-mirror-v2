@@ -1,0 +1,13 @@
+# 镜像同步请求列表
+#
+# 在此文件添加需要同步的新镜像，每行一个。提交 PR 后，管理员 review 并合并，
+# 合并后自动触发同步。同步完成后，管理员会将条目正式加入 regsync.yml 并清空本文件。
+#
+# 支持的镜像源：
+#   docker.io / registry.k8s.io / public.ecr.aws / quay.io / ghcr.io / gcr.io
+#
+# 请写明确的版本 tag，避免使用 :latest（每次都重新同步，浪费带宽）：
+#   推荐：nginx:1.27   redis:7.4   registry.k8s.io/metrics-server:v0.7.2
+#   不推荐：nginx   nginx:latest
+#
+# 已收录镜像见 regsync.yml，已同步镜像见 catalog/mirrored-images.txt

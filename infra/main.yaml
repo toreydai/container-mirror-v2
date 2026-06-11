@@ -1,0 +1,310 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: container-mirror 2.0 China-side resources
+
+Parameters:
+  NotificationEmail:
+    Type: String
+  DaysThreshold:
+    Type: Number
+    Default: 180
+  MirrorImageCountLimit:
+    Type: Number
+    Default: 50
+    Description: Maximum number of images per mirror repository. Prevents runaway tag accumulation.
+  CleanupDryRun:
+    Type: String
+    Default: "true"
+    AllowedValues: ["true", "false"]
+  CleanupScheduleState:
+    Type: String
+    Default: DISABLED
+    AllowedValues: [ENABLED, DISABLED]
+    Description: Enable only after uploading optimize/functions/cleanup/lambda_function.py.
+  CleanupDeleteAllowlist:
+    Type: String
+    Default: ""
+    Description: Comma-separated repository, repository:tag, or repository@digest values allowed for non-dry-run deletion.
+  EcrRegistry:
+    Type: String
+    Default: 048912060910.dkr.ecr.cn-northwest-1.amazonaws.com.cn
+    Description: Target China ECR registry hostname without scheme.
+  WebhookToken:
+    Type: String
+    Default: ""
+    NoEcho: true
+    Description: Optional token accepted as Authorization Bearer token or clientConfig.url ?token= value.
+  RepositoryPolicyText:
+    Type: String
+    Default: '{"Version":"2012-10-17","Statement":[{"Sid":"AllowMirrorConsumersPull","Effect":"Allow","Principal":"*","Action":["ecr:GetDownloadUrlForLayer","ecr:BatchGetImage","ecr:BatchCheckLayerAvailability"]}]}'
+
+Resources:
+  # ECR repository creation templates. The sync runner runs outside China and pushes into these prefixes.
+  DockerHubTemplate:
+    Type: AWS::ECR::RepositoryCreationTemplate
+    Properties:
+      Prefix: dockerhub/
+      AppliedFor: [CREATE_ON_PUSH]
+      ImageTagMutability: MUTABLE
+      RepositoryPolicy: !Ref RepositoryPolicyText
+      LifecyclePolicy:
+        LifecyclePolicyText: !Sub '{"rules":[{"rulePriority":1,"description":"Limit mirror to ${MirrorImageCountLimit} images","selection":{"tagStatus":"any","countType":"imageCountMoreThan","countNumber":${MirrorImageCountLimit}},"action":{"type":"expire"}}]}'
+
+  GcrTemplate:
+    Type: AWS::ECR::RepositoryCreationTemplate
+    Properties:
+      Prefix: gcr/
+      AppliedFor: [CREATE_ON_PUSH]
+      ImageTagMutability: MUTABLE
+      RepositoryPolicy: !Ref RepositoryPolicyText
+      LifecyclePolicy:
+        LifecyclePolicyText: !Sub '{"rules":[{"rulePriority":1,"description":"Limit mirror to ${MirrorImageCountLimit} images","selection":{"tagStatus":"any","countType":"imageCountMoreThan","countNumber":${MirrorImageCountLimit}},"action":{"type":"expire"}}]}'
+
+  RegistryK8sTemplate:
+    Type: AWS::ECR::RepositoryCreationTemplate
+    Properties:
+      Prefix: registryk8sio/
+      AppliedFor: [CREATE_ON_PUSH]
+      ImageTagMutability: MUTABLE
+      RepositoryPolicy: !Ref RepositoryPolicyText
+      LifecyclePolicy:
+        LifecyclePolicyText: !Sub '{"rules":[{"rulePriority":1,"description":"Limit mirror to ${MirrorImageCountLimit} images","selection":{"tagStatus":"any","countType":"imageCountMoreThan","countNumber":${MirrorImageCountLimit}},"action":{"type":"expire"}}]}'
+
+  QuayTemplate:
+    Type: AWS::ECR::RepositoryCreationTemplate
+    Properties:
+      Prefix: quay/
+      AppliedFor: [CREATE_ON_PUSH]
+      ImageTagMutability: MUTABLE
+      RepositoryPolicy: !Ref RepositoryPolicyText
+      LifecyclePolicy:
+        LifecyclePolicyText: !Sub '{"rules":[{"rulePriority":1,"description":"Limit mirror to ${MirrorImageCountLimit} images","selection":{"tagStatus":"any","countType":"imageCountMoreThan","countNumber":${MirrorImageCountLimit}},"action":{"type":"expire"}}]}'
+
+  EcrPublicTemplate:
+    Type: AWS::ECR::RepositoryCreationTemplate
+    Properties:
+      Prefix: ecrpublic/
+      AppliedFor: [CREATE_ON_PUSH]
+      ImageTagMutability: MUTABLE
+      RepositoryPolicy: !Ref RepositoryPolicyText
+      LifecyclePolicy:
+        LifecyclePolicyText: !Sub '{"rules":[{"rulePriority":1,"description":"Limit mirror to ${MirrorImageCountLimit} images","selection":{"tagStatus":"any","countType":"imageCountMoreThan","countNumber":${MirrorImageCountLimit}},"action":{"type":"expire"}}]}'
+
+  GhcrTemplate:
+    Type: AWS::ECR::RepositoryCreationTemplate
+    Properties:
+      Prefix: ghcr/
+      AppliedFor: [CREATE_ON_PUSH]
+      ImageTagMutability: MUTABLE
+      RepositoryPolicy: !Ref RepositoryPolicyText
+      LifecyclePolicy:
+        LifecyclePolicyText: !Sub '{"rules":[{"rulePriority":1,"description":"Limit mirror to ${MirrorImageCountLimit} images","selection":{"tagStatus":"any","countType":"imageCountMoreThan","countNumber":${MirrorImageCountLimit}},"action":{"type":"expire"}}]}'
+
+  ElasticTemplate:
+    Type: AWS::ECR::RepositoryCreationTemplate
+    Properties:
+      Prefix: elastic/
+      AppliedFor: [CREATE_ON_PUSH]
+      ImageTagMutability: MUTABLE
+      RepositoryPolicy: !Ref RepositoryPolicyText
+      LifecyclePolicy:
+        LifecyclePolicyText: !Sub '{"rules":[{"rulePriority":1,"description":"Limit mirror to ${MirrorImageCountLimit} images","selection":{"tagStatus":"any","countType":"imageCountMoreThan","countNumber":${MirrorImageCountLimit}},"action":{"type":"expire"}}]}'
+
+  AmazonEcrTemplate:
+    Type: AWS::ECR::RepositoryCreationTemplate
+    Properties:
+      Prefix: amazonecr/
+      AppliedFor: [CREATE_ON_PUSH]
+      ImageTagMutability: MUTABLE
+      RepositoryPolicy: !Ref RepositoryPolicyText
+      LifecyclePolicy:
+        LifecyclePolicyText: !Sub '{"rules":[{"rulePriority":1,"description":"Limit mirror to ${MirrorImageCountLimit} images","selection":{"tagStatus":"any","countType":"imageCountMoreThan","countNumber":${MirrorImageCountLimit}},"action":{"type":"expire"}}]}'
+
+  NotificationTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName: container-mirror
+
+  NotificationSubscription:
+    Type: AWS::SNS::Subscription
+    Properties:
+      Protocol: email
+      Endpoint: !Ref NotificationEmail
+      TopicArn: !Ref NotificationTopic
+
+  ReportBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+
+  ReportBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref ReportBucket
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Sid: AllowSyncConfigReadWrite
+            Effect: Allow
+            Principal:
+              AWS: !Sub "arn:${AWS::Partition}:iam::${AWS::AccountId}:root"
+            Action:
+              - s3:GetObject
+              - s3:PutObject
+              - s3:DeleteObject
+            Resource: !Sub "${ReportBucket.Arn}/sync-configs/*"
+
+  CleanupRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - !Sub "arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+      Policies:
+        - PolicyName: Cleanup
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - ecr:DescribeRepositories
+                  - ecr:DescribeImages
+                  - ecr:ListImages
+                  - ecr:BatchDeleteImage
+                  - ecr:DeleteRepository
+                Resource: "*"
+              - Effect: Allow
+                Action: s3:PutObject
+                Resource: !Sub "${ReportBucket.Arn}/*"
+              - Effect: Allow
+                Action: sns:Publish
+                Resource: !Ref NotificationTopic
+
+  CleanupFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: container-mirror-cleanup
+      Runtime: python3.12
+      Handler: lambda_function.handler
+      Role: !GetAtt CleanupRole.Arn
+      Timeout: 900
+      MemorySize: 3008
+      Environment:
+        Variables:
+          DAYS_THRESHOLD: !Ref DaysThreshold
+          DRY_RUN: !Ref CleanupDryRun
+          DELETE_ALLOWLIST: !Ref CleanupDeleteAllowlist
+          REPORT_BUCKET: !Ref ReportBucket
+          SNS_TOPIC_ARN: !Ref NotificationTopic
+      Code:
+        ZipFile: |
+          def handler(event, context):
+              return {"bootstrap": "replace code with optimize/functions/cleanup/lambda_function.py"}
+
+  CleanupRule:
+    Type: AWS::Events::Rule
+    Properties:
+      Name: container-mirror-cleanup-monthly
+      ScheduleExpression: cron(0 15 15 * ? *)
+      State: !Ref CleanupScheduleState
+      Targets:
+        - Id: Cleanup
+          Arn: !GetAtt CleanupFunction.Arn
+
+  CleanupPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref CleanupFunction
+      Action: lambda:InvokeFunction
+      Principal: events.amazonaws.com
+      SourceArn: !GetAtt CleanupRule.Arn
+
+  WebhookApi:
+    Type: AWS::ApiGateway::RestApi
+    Properties:
+      Name: container-mirror-image-webhook
+      EndpointConfiguration:
+        Types: [REGIONAL]
+
+  WebhookMethod:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      AuthorizationType: NONE
+      HttpMethod: POST
+      Integration:
+        IntegrationHttpMethod: POST
+        Type: AWS_PROXY
+        Uri: !Sub "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${WebhookFunction.Arn}/invocations"
+      ResourceId: !GetAtt WebhookApi.RootResourceId
+      RestApiId: !Ref WebhookApi
+
+  WebhookDeployment:
+    Type: AWS::ApiGateway::Deployment
+    DependsOn: WebhookMethod
+    Properties:
+      RestApiId: !Ref WebhookApi
+      StageName: call
+
+  WebhookRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - !Sub "arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+
+  WebhookFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: container-mirror-image-webhook
+      Runtime: python3.12
+      Handler: lambda_function.handler
+      Role: !GetAtt WebhookRole.Arn
+      Timeout: 30
+      MemorySize: 128
+      Environment:
+        Variables:
+          ECR_REGISTRY: !Ref EcrRegistry
+          WEBHOOK_TOKEN: !Ref WebhookToken
+      Code:
+        ZipFile: |
+          def handler(event, context):
+              return {"statusCode": 500, "body": "replace code with optimize/functions/webhook/lambda_function.py"}
+
+  WebhookPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !Ref WebhookFunction
+      Principal: apigateway.amazonaws.com
+      SourceArn: !Sub "arn:${AWS::Partition}:execute-api:${AWS::Region}:${AWS::AccountId}:${WebhookApi}/*/POST/"
+
+Outputs:
+  NotificationTopicArn:
+    Value: !Ref NotificationTopic
+  ReportBucket:
+    Value: !Ref ReportBucket
+  CleanupFunction:
+    Value: !Ref CleanupFunction
+  WebhookFunction:
+    Value: !Ref WebhookFunction
+  WebhookURL:
+    Value: !Sub "https://${WebhookApi}.execute-api.${AWS::Region}.${AWS::URLSuffix}/call"

@@ -1,0 +1,88 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: CodeBuild project for container-mirror sync (Tokyo → China ECR)
+
+Parameters:
+  GitHubRepo:
+    Type: String
+    Default: https://github.com/toreydai/container-mirror-v2
+  EcrRegistry:
+    Type: String
+    Default: 150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn
+
+Resources:
+  CodeBuildRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: container-mirror-codebuild-role
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: codebuild.amazonaws.com
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: container-mirror-codebuild-policy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - logs:CreateLogGroup
+                  - logs:CreateLogStream
+                  - logs:PutLogEvents
+                Resource: !Sub 'arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/codebuild/container-mirror-sync*'
+              - Effect: Allow
+                Action:
+                  - ssm:GetParameter
+                  - ssm:GetParameters
+                Resource:
+                  - !Sub 'arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter/container-mirror/*'
+
+  # NOTE: the China IAM user (keys in /container-mirror/china-ak+sk) must have
+  # ecr:DescribeImages on * in the China account for digest pre-filtering to work.
+  # Without it the pre-filter is silently skipped (safe fallback to full sync).
+
+  CodeBuildProject:
+    Type: AWS::CodeBuild::Project
+    Properties:
+      Name: container-mirror-sync
+      ServiceRole: !GetAtt CodeBuildRole.Arn
+      Source:
+        Type: GITHUB
+        Location: !Ref GitHubRepo
+        BuildSpec: infra/buildspec.yml
+      Environment:
+        Type: LINUX_CONTAINER
+        ComputeType: BUILD_GENERAL1_SMALL
+        Image: aws/codebuild/standard:7.0
+        PrivilegedMode: false
+        EnvironmentVariables:
+          - Name: CHINA_AK
+            Type: PARAMETER_STORE
+            Value: /container-mirror/china-ak
+          - Name: CHINA_SK
+            Type: PARAMETER_STORE
+            Value: /container-mirror/china-sk
+          - Name: DOCKERHUB_USER
+            Type: PARAMETER_STORE
+            Value: /container-mirror/dockerhub-user
+          - Name: DOCKERHUB_TOKEN
+            Type: PARAMETER_STORE
+            Value: /container-mirror/dockerhub-token
+          - Name: ECR_REGISTRY
+            Type: PLAINTEXT
+            Value: !Ref EcrRegistry
+      Artifacts:
+        Type: NO_ARTIFACTS
+      TimeoutInMinutes: 120
+      LogsConfig:
+        CloudWatchLogs:
+          Status: ENABLED
+          GroupName: /aws/codebuild/container-mirror-sync
+
+Outputs:
+  ProjectName:
+    Value: container-mirror-sync
+  ProjectArn:
+    Value: !GetAtt CodeBuildProject.Arn

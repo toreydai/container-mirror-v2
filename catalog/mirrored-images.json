@@ -1,0 +1,1155 @@
+{
+  "generatedAt": "2026-06-11T08:13:20.177200+00:00",
+  "images": [
+    {
+      "source": "alpine:3.23.4",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/alpine:3.23.4",
+      "repository": "dockerhub/library/alpine",
+      "tag": "3.23.4",
+      "digest": "sha256:5b10f432ef3da1b8d4c7eb6c487f2f5a8f096bc91145e68878dd4a5019afde11",
+      "pushedAt": "2026-06-11T01:14:41.061000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 4200497
+    },
+    {
+      "source": "alpine:3.24.0",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/alpine:3.24.0",
+      "repository": "dockerhub/library/alpine",
+      "tag": "3.24.0",
+      "digest": "sha256:a2d49ea686c2adfe3c992e47dc3b5e7fa6e6b5055609400dc2acaeb241c829f4",
+      "pushedAt": "2026-06-11T06:43:28.393000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 4202957
+    },
+    {
+      "source": "busybox:1.36",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/busybox:1.36",
+      "repository": "dockerhub/library/busybox",
+      "tag": "1.36",
+      "digest": "sha256:73aaf090f3d85aa34ee199857f03fa3a95c8ede2ffd4cc2cdb5b94e566b11662",
+      "pushedAt": "2026-06-09T08:11:31.569000+00:00",
+      "lastRecordedPullTime": "2026-06-11T06:42:42.481000+00:00",
+      "sizeBytes": 2521855
+    },
+    {
+      "source": "busybox:1.37.0",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/busybox:1.37.0",
+      "repository": "dockerhub/library/busybox",
+      "tag": "1.37.0",
+      "digest": "sha256:9532d8c39891ca2ecde4d30d7710e01fb739c87a8b9299685c63704296b16028",
+      "pushedAt": "2026-06-10T02:15:07.266000+00:00",
+      "lastRecordedPullTime": "2026-06-10T15:01:44.496000+00:00",
+      "sizeBytes": 2526255
+    },
+    {
+      "source": "busybox:1.38.0",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/busybox:1.38.0",
+      "repository": "dockerhub/library/busybox",
+      "tag": "1.38.0",
+      "digest": "sha256:fd8d9aa63ba2f0982b5304e1ee8d3b90a210bc1ffb5314d980eb6962f1a9715d",
+      "pushedAt": "2026-06-10T02:13:39.673000+00:00",
+      "lastRecordedPullTime": "2026-06-10T15:01:44.574000+00:00",
+      "sizeBytes": 2543952
+    },
+    {
+      "source": "debian:12.14",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/debian:12.14",
+      "repository": "dockerhub/library/debian",
+      "tag": "12.14",
+      "digest": "sha256:6a6be5fd1b7e9376c29b61d79bd97aaa5827f8631473cc4fd4b92719f4f8b037",
+      "pushedAt": "2026-06-11T06:44:50.688000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 52340656
+    },
+    {
+      "source": "debian:13.4",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/debian:13.4",
+      "repository": "dockerhub/library/debian",
+      "tag": "13.4",
+      "digest": "sha256:e2d08da6f42ef4b09b165d55528a12727aeed8240dc9edf888e3ec07e10ef9da",
+      "pushedAt": "2026-06-10T01:55:23.066000+00:00",
+      "lastRecordedPullTime": "2026-06-10T15:01:50.659000+00:00",
+      "sizeBytes": 53123620
+    },
+    {
+      "source": "debian:13.5",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/debian:13.5",
+      "repository": "dockerhub/library/debian",
+      "tag": "13.5",
+      "digest": "sha256:4ae67669760b807c19f23902a3fd7c121a6a70cf2ae709035674b23e712e4d62",
+      "pushedAt": "2026-06-11T01:14:43.051000+00:00",
+      "lastRecordedPullTime": "2026-06-11T06:42:42.372000+00:00",
+      "sizeBytes": 53132637
+    },
+    {
+      "source": "gcr.io/distroless/base-debian12:latest",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/gcr/distroless/base-debian12:latest",
+      "repository": "gcr/distroless/base-debian12",
+      "tag": "latest",
+      "digest": "sha256:e7e678c88c59e70e105a46549bb3fbfb3d732ee3b4afd3a19fdab2e15afaa6b3",
+      "pushedAt": "2026-06-11T01:13:25.445000+00:00",
+      "lastRecordedPullTime": "2026-06-11T02:21:54.319000+00:00",
+      "sizeBytes": 9055509
+    },
+    {
+      "source": "gcr.io/distroless/java21-debian12:latest",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/gcr/distroless/java21-debian12:latest",
+      "repository": "gcr/distroless/java21-debian12",
+      "tag": "latest",
+      "digest": "sha256:f34fd3e4e2d7a246d764d0614f5e6ffb3a735930723fac4cfc25a72798950262",
+      "pushedAt": "2026-06-09T08:39:31.650000+00:00",
+      "lastRecordedPullTime": "2026-06-11T07:14:49.024000+00:00",
+      "sizeBytes": 64349613
+    },
+    {
+      "source": "gcr.io/distroless/nodejs20-debian12:latest",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/gcr/distroless/nodejs20-debian12:latest",
+      "repository": "gcr/distroless/nodejs20-debian12",
+      "tag": "latest",
+      "digest": "sha256:6fe218dbad37e979c7542e670d28d6e23d3f53d2929693bc9cdded8b622f339f",
+      "pushedAt": "2026-06-09T08:40:22.280000+00:00",
+      "lastRecordedPullTime": "2026-06-11T06:42:40.977000+00:00",
+      "sizeBytes": 48121577
+    },
+    {
+      "source": "gcr.io/distroless/python3-debian12:latest",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/gcr/distroless/python3-debian12:latest",
+      "repository": "gcr/distroless/python3-debian12",
+      "tag": "latest",
+      "digest": "sha256:2fdb05402a2cf21cf78fdb3ba4c5db167241e9e498140f5bf689d7efb773731f",
+      "pushedAt": "2026-06-09T08:41:09.526000+00:00",
+      "lastRecordedPullTime": "2026-06-11T06:42:40.932000+00:00",
+      "sizeBytes": 19681099
+    },
+    {
+      "source": "ghcr.io/kyverno/kyverno:v1.18.1",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/ghcr/kyverno/kyverno:v1.18.1",
+      "repository": "ghcr/kyverno/kyverno",
+      "tag": "v1.18.1",
+      "digest": "sha256:dcd8cf6de2158cd8334fc728f9c4eb521e2c006320a59d69a9b91af87ac8f41c",
+      "pushedAt": "2026-06-11T07:39:56.535000+00:00",
+      "lastRecordedPullTime": "2026-06-11T08:00:25.239000+00:00",
+      "sizeBytes": 46499856
+    },
+    {
+      "source": "golang:1.25.11",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/golang:1.25.11",
+      "repository": "dockerhub/library/golang",
+      "tag": "1.25.11",
+      "digest": "sha256:fb6b5fe6aca5fb55b7238c2fadaac64bd955ceeb6f305cb0ac3fd28b377e4415",
+      "pushedAt": "2026-06-11T01:28:48.022000+00:00",
+      "lastRecordedPullTime": "2026-06-11T06:42:41.947000+00:00",
+      "sizeBytes": 2393410805
+    },
+    {
+      "source": "golang:1.25.11-alpine3.24",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/golang:1.25.11-alpine3.24",
+      "repository": "dockerhub/library/golang",
+      "tag": "1.25.11-alpine3.24",
+      "digest": "sha256:be31066cc557412b36bf16393266708cf9d2584b669f384d35c20109c1e4493d",
+      "pushedAt": "2026-06-11T01:28:47.806000+00:00",
+      "lastRecordedPullTime": "2026-06-11T02:22:11.594000+00:00",
+      "sizeBytes": 64392847
+    },
+    {
+      "source": "golang:1.26.4",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/golang:1.26.4",
+      "repository": "dockerhub/library/golang",
+      "tag": "1.26.4",
+      "digest": "sha256:d184d9be4c13614e28498d632eeaaac704d662f18ad357e1df74a44424236cea",
+      "pushedAt": "2026-06-11T08:01:28.873000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 2400731005
+    },
+    {
+      "source": "golang:1.26.4-alpine3.24",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/golang:1.26.4-alpine3.24",
+      "repository": "dockerhub/library/golang",
+      "tag": "1.26.4-alpine3.24",
+      "digest": "sha256:cbd920d5d022f93cd3a80182331134419376edceeac3ce653daa84bb613286f9",
+      "pushedAt": "2026-06-11T02:53:13.656000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 71442377
+    },
+    {
+      "source": "grafana/grafana:12.4.4",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/grafana/grafana:12.4.4",
+      "repository": "dockerhub/grafana/grafana",
+      "tag": "12.4.4",
+      "digest": "sha256:378f94b054e5384cd74322cbf7542cff6a43e068e4011f81ea5e75323247df02",
+      "pushedAt": "2026-06-10T02:26:41.601000+00:00",
+      "lastRecordedPullTime": "2026-06-10T15:01:49.199000+00:00",
+      "sizeBytes": 291505209
+    },
+    {
+      "source": "grafana/grafana:13.0.2",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/grafana/grafana:13.0.2",
+      "repository": "dockerhub/grafana/grafana",
+      "tag": "13.0.2",
+      "digest": "sha256:5dad0df181cb644a14e13617b913b261a54f7d4fd4510721dba420929f35bea2",
+      "pushedAt": "2026-06-10T02:31:20.190000+00:00",
+      "lastRecordedPullTime": "2026-06-10T15:01:49.313000+00:00",
+      "sizeBytes": 352046068
+    },
+    {
+      "source": "grafana/promtail:3.5.12",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/grafana/promtail:3.5.12",
+      "repository": "dockerhub/grafana/promtail",
+      "tag": "3.5.12",
+      "digest": "sha256:938367a076c467b721c37a141663407e1f23739d6d24c98eb2c325bfd9ea7462",
+      "pushedAt": "2026-06-10T02:28:09.963000+00:00",
+      "lastRecordedPullTime": "2026-06-10T15:01:49.904000+00:00",
+      "sizeBytes": 65421889
+    },
+    {
+      "source": "grafana/promtail:3.6.11",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/grafana/promtail:3.6.11",
+      "repository": "dockerhub/grafana/promtail",
+      "tag": "3.6.11",
+      "digest": "sha256:a761cb834cfaeee29745440d4884d6748f0a08d8f68928db1d707018c1dcfbe9",
+      "pushedAt": "2026-06-10T02:27:46.681000+00:00",
+      "lastRecordedPullTime": "2026-06-10T15:01:49.587000+00:00",
+      "sizeBytes": 74490748
+    },
+    {
+      "source": "haproxy:3.3.10",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/haproxy:3.3.10",
+      "repository": "dockerhub/library/haproxy",
+      "tag": "3.3.10",
+      "digest": "sha256:b81136556c9a86e752e30863fded622e920570d3a6d0971d26bcdd9a08b9ddd7",
+      "pushedAt": "2026-06-11T06:50:06.241000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 50510933
+    },
+    {
+      "source": "haproxy:3.3.10-alpine3.23",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/haproxy:3.3.10-alpine3.23",
+      "repository": "dockerhub/library/haproxy",
+      "tag": "3.3.10-alpine3.23",
+      "digest": "sha256:0b1bd52a831d0f0e0fb03a56e59fcd5c16b8e219b0e5f2eff388b40fd95b5d44",
+      "pushedAt": "2026-06-10T02:24:45.843000+00:00",
+      "lastRecordedPullTime": "2026-06-10T15:01:45.141000+00:00",
+      "sizeBytes": 20217211
+    },
+    {
+      "source": "haproxy:3.3.10-alpine3.24",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/haproxy:3.3.10-alpine3.24",
+      "repository": "dockerhub/library/haproxy",
+      "tag": "3.3.10-alpine3.24",
+      "digest": "sha256:0ea8efa8da6956fb6516c99dc4133d24d9e1a7f499a09e2cea1a348f9a8e0e95",
+      "pushedAt": "2026-06-11T06:50:07.557000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 22492614
+    },
+    {
+      "source": "haproxy:3.4.0",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/haproxy:3.4.0",
+      "repository": "dockerhub/library/haproxy",
+      "tag": "3.4.0",
+      "digest": "sha256:5f71a6a52a1aa19cb4270dc3867f70d4222da7c38d562ccd37a0498f08bc9fc3",
+      "pushedAt": "2026-06-11T07:12:43.192000+00:00",
+      "lastRecordedPullTime": "2026-06-11T07:14:45.484000+00:00",
+      "sizeBytes": 51714875
+    },
+    {
+      "source": "haproxy:3.4.0-alpine3.23",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/haproxy:3.4.0-alpine3.23",
+      "repository": "dockerhub/library/haproxy",
+      "tag": "3.4.0-alpine3.23",
+      "digest": "sha256:5614ec450485ce1f9f8c25d231cf7fbab9326302a395f2355e05cbbc2dd7468b",
+      "pushedAt": "2026-06-10T02:22:23.567000+00:00",
+      "lastRecordedPullTime": "2026-06-10T15:01:44.953000+00:00",
+      "sizeBytes": 21437681
+    },
+    {
+      "source": "haproxy:3.4.0-alpine3.24",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/haproxy:3.4.0-alpine3.24",
+      "repository": "dockerhub/library/haproxy",
+      "tag": "3.4.0-alpine3.24",
+      "digest": "sha256:b00dc6e2584f9b27b315bbbbcdbeffbc95eb1e164bee8680893701c7dc9d3e5d",
+      "pushedAt": "2026-06-11T06:48:41.219000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 23713446
+    },
+    {
+      "source": "httpd:2.4.68",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/httpd:2.4.68",
+      "repository": "dockerhub/library/httpd",
+      "tag": "2.4.68",
+      "digest": "sha256:406c0c44f469b87ba8a311b79d74ec0a92dd89a8abb3633f2cf13883d5f32b62",
+      "pushedAt": "2026-06-11T06:48:30.348000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 50171239
+    },
+    {
+      "source": "httpd:2.4.68-alpine3.23",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/httpd:2.4.68-alpine3.23",
+      "repository": "dockerhub/library/httpd",
+      "tag": "2.4.68-alpine3.23",
+      "digest": "sha256:4a15e9c73f25334bc03cfb3c692c9adfc103bb46ca89cee1f0b9a5fcbc7b21f6",
+      "pushedAt": "2026-06-10T02:26:24.307000+00:00",
+      "lastRecordedPullTime": "2026-06-10T15:01:44.837000+00:00",
+      "sizeBytes": 21389434
+    },
+    {
+      "source": "httpd:2.4.68-alpine3.24",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/httpd:2.4.68-alpine3.24",
+      "repository": "dockerhub/library/httpd",
+      "tag": "2.4.68-alpine3.24",
+      "digest": "sha256:175be7460cfc3330f59e0f17ec8315cabcef72ce9c62fb859e8a8ee847d7507d",
+      "pushedAt": "2026-06-11T06:49:06.775000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 24070080
+    },
+    {
+      "source": "mariadb:12.2.2",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/mariadb:12.2.2",
+      "repository": "dockerhub/library/mariadb",
+      "tag": "12.2.2",
+      "digest": "sha256:6a4c4bbf0447c2247801309513fcc0dd17c3f35390368139ce419387fdd1144d",
+      "pushedAt": "2026-06-11T03:39:02.286000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 117110755
+    },
+    {
+      "source": "mariadb:12.3.2",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/mariadb:12.3.2",
+      "repository": "dockerhub/library/mariadb",
+      "tag": "12.3.2",
+      "digest": "sha256:b1c7bf836e64ed9406a8984af29509f40089d55cea14b32f12c4726a1f17104b",
+      "pushedAt": "2026-06-11T04:04:08.470000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 115081813
+    },
+    {
+      "source": "memcached:1.6.42",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/memcached:1.6.42",
+      "repository": "dockerhub/library/memcached",
+      "tag": "1.6.42",
+      "digest": "sha256:938a94766955973e4b87e432830ceaf461288dddeaa3327d0359f9e8d78982c4",
+      "pushedAt": "2026-06-11T06:57:03.782000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 36172460
+    },
+    {
+      "source": "memcached:1.6.42-alpine3.23",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/memcached:1.6.42-alpine3.23",
+      "repository": "dockerhub/library/memcached",
+      "tag": "1.6.42-alpine3.23",
+      "digest": "sha256:43a2e7f74aebfff0c9921f4d367299ced9eacaeaccdc8bb4bc122a4fba2cd909",
+      "pushedAt": "2026-06-10T02:09:37.480000+00:00",
+      "lastRecordedPullTime": "2026-06-10T15:01:45.943000+00:00",
+      "sizeBytes": 6293896
+    },
+    {
+      "source": "memcached:1.6.42-alpine3.24",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/memcached:1.6.42-alpine3.24",
+      "repository": "dockerhub/library/memcached",
+      "tag": "1.6.42-alpine3.24",
+      "digest": "sha256:24f46bd5e6250525c4219957edf4490e1dcff92a8c798325d9422798af8d02db",
+      "pushedAt": "2026-06-11T04:15:06.587000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 9063427
+    },
+    {
+      "source": "mongo:8.2.10",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/mongo:8.2.10",
+      "repository": "dockerhub/library/mongo",
+      "tag": "8.2.10",
+      "digest": "sha256:1286be0f98b0da2575280a7a07e50446dfd707d683fd8e51937526b6e3c65fd9",
+      "pushedAt": "2026-06-11T02:08:37.883000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 3096725582
+    },
+    {
+      "source": "mongo:8.3.3",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/mongo:8.3.3",
+      "repository": "dockerhub/library/mongo",
+      "tag": "8.3.3",
+      "digest": "sha256:9c1d999aad9357e865f000c8cd4937bf2698ff943b9b584a2f3d7860ebfef142",
+      "pushedAt": "2026-06-11T02:06:49.643000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 3199987817
+    },
+    {
+      "source": "mysql:9.6.0",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/mysql:9.6.0",
+      "repository": "dockerhub/library/mysql",
+      "tag": "9.6.0",
+      "digest": "sha256:c5df04bee1a42b74a5841c6409e669cf62126cd0416f00c1cea8ab933b9361b9",
+      "pushedAt": "2026-06-11T01:23:45.175000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 266350591
+    },
+    {
+      "source": "mysql:9.7.0",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/mysql:9.7.0",
+      "repository": "dockerhub/library/mysql",
+      "tag": "9.7.0",
+      "digest": "sha256:c11782aa2a96624c1efc121768641d96954faa136d6aa82751b032d8c426ffbc",
+      "pushedAt": "2026-06-11T01:23:47.540000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 273452611
+    },
+    {
+      "source": "nginx:1.26",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/nginx:1.26",
+      "repository": "dockerhub/library/nginx",
+      "tag": "1.26",
+      "digest": "sha256:41b194461e4bae16f9b25d68b0976ed4735b89ca625c89aad88e1c1c3b7e8860",
+      "pushedAt": "2026-06-11T08:05:01.265000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 76852223
+    },
+    {
+      "source": "nginx:1.26-alpine",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/nginx:1.26-alpine",
+      "repository": "dockerhub/library/nginx",
+      "tag": "1.26-alpine",
+      "digest": "sha256:1eadbb07820339e8bbfed18c771691970baee292ec4ab2558f1453d26153e22d",
+      "pushedAt": "2026-06-11T08:08:07.090000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 21624376
+    },
+    {
+      "source": "nginx:1.27",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/nginx:1.27",
+      "repository": "dockerhub/library/nginx",
+      "tag": "1.27",
+      "digest": "sha256:6784fb0834aa7dbbe12e3d7471e69c290df3e6ba810dc38b34ae33d3c1c05f7d",
+      "pushedAt": "2026-06-11T07:41:55.016000+00:00",
+      "lastRecordedPullTime": "2026-06-11T08:00:44.544000+00:00",
+      "sizeBytes": 77121153
+    },
+    {
+      "source": "nginx:1.27-alpine",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/nginx:1.27-alpine",
+      "repository": "dockerhub/library/nginx",
+      "tag": "1.27-alpine",
+      "digest": "sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10",
+      "pushedAt": "2026-06-11T08:06:46.737000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 21819411
+    },
+    {
+      "source": "nginx:1.30.2",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/nginx:1.30.2",
+      "repository": "dockerhub/library/nginx",
+      "tag": "1.30.2",
+      "digest": "sha256:b7007b48d6cdc82e6e6cd02f7cd1b8fc4244d09369ec717a3de33c97275ae479",
+      "pushedAt": "2026-06-11T06:44:20.590000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 67211377
+    },
+    {
+      "source": "nginx:1.30.2-alpine3.23",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/nginx:1.30.2-alpine3.23",
+      "repository": "dockerhub/library/nginx",
+      "tag": "1.30.2-alpine3.23",
+      "digest": "sha256:5f979dcfed4ce6461873f087e8c980d6e29b084b9e8776d9704a7e989b5f4898",
+      "pushedAt": "2026-06-10T02:17:57.036000+00:00",
+      "lastRecordedPullTime": "2026-06-10T15:01:44.821000+00:00",
+      "sizeBytes": 26331317
+    },
+    {
+      "source": "nginx:1.31.1",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/nginx:1.31.1",
+      "repository": "dockerhub/library/nginx",
+      "tag": "1.31.1",
+      "digest": "sha256:94ef2bdc0b32e45530840de5e08a5856429322546a45d6cea21609890af5b635",
+      "pushedAt": "2026-06-11T06:43:46.171000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 67231966
+    },
+    {
+      "source": "nginx:1.31.1-alpine3.23",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/nginx:1.31.1-alpine3.23",
+      "repository": "dockerhub/library/nginx",
+      "tag": "1.31.1-alpine3.23",
+      "digest": "sha256:8b1e78743a03dbb2c95171cc58639fef29abc8816598e27fb910ed2e621e589a",
+      "pushedAt": "2026-06-10T02:09:42.419000+00:00",
+      "lastRecordedPullTime": "2026-06-10T15:01:44.707000+00:00",
+      "sizeBytes": 26343351
+    },
+    {
+      "source": "node:24.16.0",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/node:24.16.0",
+      "repository": "dockerhub/library/node",
+      "tag": "24.16.0",
+      "digest": "sha256:67315b644853746f2adc8350dbc70a0534e1b891856e3c628967c7d422b84438",
+      "pushedAt": "2026-06-11T07:31:57.457000+00:00",
+      "lastRecordedPullTime": "2026-06-11T07:59:52.601000+00:00",
+      "sizeBytes": 425388143
+    },
+    {
+      "source": "node:24.16.0-alpine3.23",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/node:24.16.0-alpine3.23",
+      "repository": "dockerhub/library/node",
+      "tag": "24.16.0-alpine3.23",
+      "digest": "sha256:2bdb65ed1dab192432bc31c95f94155ca5ad7fc1392fb7eb7526ab682fa5bf14",
+      "pushedAt": "2026-06-10T15:03:26.071000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 58466136
+    },
+    {
+      "source": "node:26.3.0",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/node:26.3.0",
+      "repository": "dockerhub/library/node",
+      "tag": "26.3.0",
+      "digest": "sha256:c4bbb5e46650427e169612556fe594770fc86bfc4284da513cfe8e7f166a8f59",
+      "pushedAt": "2026-06-11T07:32:15.259000+00:00",
+      "lastRecordedPullTime": "2026-06-11T07:59:52.632000+00:00",
+      "sizeBytes": 449952629
+    },
+    {
+      "source": "node:26.3.0-alpine3.23",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/node:26.3.0-alpine3.23",
+      "repository": "dockerhub/library/node",
+      "tag": "26.3.0-alpine3.23",
+      "digest": "sha256:144769ec3f32e8ee36b3cfde91e82bee25d9367b20f31a151f3f7eea3a2a8541",
+      "pushedAt": "2026-06-10T15:04:00.487000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 63716122
+    },
+    {
+      "source": "node:26.3.0-alpine3.24",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/node:26.3.0-alpine3.24",
+      "repository": "dockerhub/library/node",
+      "tag": "26.3.0-alpine3.24",
+      "digest": "sha256:3ad34ca6292aec4a91d8ddeb9229e29d9c2f689efd0dd242860889ac71842eba",
+      "pushedAt": "2026-06-11T01:17:16.765000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 63522630
+    },
+    {
+      "source": "php:8.4.22",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/php:8.4.22",
+      "repository": "dockerhub/library/php",
+      "tag": "8.4.22",
+      "digest": "sha256:ae63f0037ee2bf2f0870585829b350deb45c193e1c1beefb2b588485f86376f2",
+      "pushedAt": "2026-06-11T06:47:51.066000+00:00",
+      "lastRecordedPullTime": "2026-06-11T07:31:09.087000+00:00",
+      "sizeBytes": 212752730
+    },
+    {
+      "source": "php:8.5.7",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/php:8.5.7",
+      "repository": "dockerhub/library/php",
+      "tag": "8.5.7",
+      "digest": "sha256:12ea29894439b82beab80dbe75eb17d4a5af939f27b32354adac5177ae13b760",
+      "pushedAt": "2026-06-11T06:46:49.902000+00:00",
+      "lastRecordedPullTime": "2026-06-11T07:31:07.631000+00:00",
+      "sizeBytes": 215185721
+    },
+    {
+      "source": "postgres:18.3",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/postgres:18.3",
+      "repository": "dockerhub/library/postgres",
+      "tag": "18.3",
+      "digest": "sha256:7e32e9833a6fb1c92c32552794cb6ed569d51b445a54907d35fc112ef39684db",
+      "pushedAt": "2026-06-11T01:28:57.575000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 176935697
+    },
+    {
+      "source": "postgres:18.3-alpine3.23",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/postgres:18.3-alpine3.23",
+      "repository": "dockerhub/library/postgres",
+      "tag": "18.3-alpine3.23",
+      "digest": "sha256:54451ecb8ab38c24c3ec123f2fd501303a3a1856a5c66e98cecf2460d5e1e9d7",
+      "pushedAt": "2026-06-11T03:06:11.484000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 122306255
+    },
+    {
+      "source": "postgres:18.4",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/postgres:18.4",
+      "repository": "dockerhub/library/postgres",
+      "tag": "18.4",
+      "digest": "sha256:fd03421d521b789274856f57ba64914f8271255ef1415ac307cbc907121c8c7b",
+      "pushedAt": "2026-06-11T06:56:38.134000+00:00",
+      "lastRecordedPullTime": "2026-06-11T07:31:08.074000+00:00",
+      "sizeBytes": 176998749
+    },
+    {
+      "source": "postgres:18.4-alpine3.22",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/postgres:18.4-alpine3.22",
+      "repository": "dockerhub/library/postgres",
+      "tag": "18.4-alpine3.22",
+      "digest": "sha256:774521500f4c22761b25a6bdb772a0a3c2e8dd32468210bdad9231c5752ea398",
+      "pushedAt": "2026-06-11T01:28:56.462000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 122406071
+    },
+    {
+      "source": "public.ecr.aws/amazonlinux/amazonlinux:2023",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/ecrpublic/amazonlinux/amazonlinux:2023",
+      "repository": "ecrpublic/amazonlinux/amazonlinux",
+      "tag": "2023",
+      "digest": "sha256:df9ca26898d7c01be79e7c84bd008d5c8c867ace2c736421d150179f0aa87c33",
+      "pushedAt": "2026-06-09T08:17:14.523000+00:00",
+      "lastRecordedPullTime": "2026-06-11T06:42:41.540000+00:00",
+      "sizeBytes": 54574964
+    },
+    {
+      "source": "python:3.13",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/python:3.13",
+      "repository": "dockerhub/library/python",
+      "tag": "3.13",
+      "digest": "sha256:e44a18830e14e9eae540c5adc180922810ff51f100010a00a7f27158edc5265f",
+      "pushedAt": "2026-06-11T08:00:11.780000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 2338351197
+    },
+    {
+      "source": "python:3.13.14",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/python:3.13.14",
+      "repository": "dockerhub/library/python",
+      "tag": "3.13.14",
+      "digest": "sha256:a190a3da167d22daa1130716ef0ca3a05e0aad4784512b77f0b0e9cfa9966f29",
+      "pushedAt": "2026-06-11T01:17:31.048000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 2338351197
+    },
+    {
+      "source": "python:3.13.14-alpine3.24",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/python:3.13.14-alpine3.24",
+      "repository": "dockerhub/library/python",
+      "tag": "3.13.14-alpine3.24",
+      "digest": "sha256:21ea1d9b51c14aacdd72e5fab4f728ac6d6dfb144796a265fff1f31abd92b422",
+      "pushedAt": "2026-06-11T02:53:05.189000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 20288492
+    },
+    {
+      "source": "python:3.14.6",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/python:3.14.6",
+      "repository": "dockerhub/library/python",
+      "tag": "3.14.6",
+      "digest": "sha256:1245d8151f1fad782d0eda48652827f618b10cb0841f3d11e3c5bf46427e19a0",
+      "pushedAt": "2026-06-11T01:17:48.897000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 2341736446
+    },
+    {
+      "source": "python:3.14.6-alpine3.24",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/python:3.14.6-alpine3.24",
+      "repository": "dockerhub/library/python",
+      "tag": "3.14.6-alpine3.24",
+      "digest": "sha256:a5d5c75488ac235e8ea61eb3912eb9e7191c63532a2c87dab313ad671908d314",
+      "pushedAt": "2026-06-11T01:18:51.875000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 21122188
+    },
+    {
+      "source": "quay.io/argoproj/argocd:v3.3.11",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/quay/argoproj/argocd:v3.3.11",
+      "repository": "quay/argoproj/argocd",
+      "tag": "v3.3.11",
+      "digest": "sha256:6a99869b4c614e04a6cd4d665cb0f6a6cf74a173ad56d6dd3451ea0a3762f3f2",
+      "pushedAt": "2026-06-10T02:01:00.049000+00:00",
+      "lastRecordedPullTime": "2026-06-11T06:42:39.058000+00:00",
+      "sizeBytes": 201802959
+    },
+    {
+      "source": "quay.io/argoproj/argocd:v3.4.3",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/quay/argoproj/argocd:v3.4.3",
+      "repository": "quay/argoproj/argocd",
+      "tag": "v3.4.3",
+      "digest": "sha256:b6d161b4984c4bffb8c02250252fdd17f23fa4e2aa25fada0e606e1fa08d2348",
+      "pushedAt": "2026-06-10T01:56:13.675000+00:00",
+      "lastRecordedPullTime": "2026-06-11T07:14:36.478000+00:00",
+      "sizeBytes": 199803804
+    },
+    {
+      "source": "quay.io/jetstack/cert-manager-cainjector:v1.19.5",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/quay/jetstack/cert-manager-cainjector:v1.19.5",
+      "repository": "quay/jetstack/cert-manager-cainjector",
+      "tag": "v1.19.5",
+      "digest": "sha256:507350a97271c5c4b6c7f8a5848d7c3ca3480c9ecd2406031a7f36c91f2558ab",
+      "pushedAt": "2026-06-10T02:05:43.546000+00:00",
+      "lastRecordedPullTime": "2026-06-11T07:14:36.406000+00:00",
+      "sizeBytes": 12518986
+    },
+    {
+      "source": "quay.io/jetstack/cert-manager-cainjector:v1.20.2",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/quay/jetstack/cert-manager-cainjector:v1.20.2",
+      "repository": "quay/jetstack/cert-manager-cainjector",
+      "tag": "v1.20.2",
+      "digest": "sha256:6f5a644135887b2aa7d5cc145072fa56421560e3586ff1f184358022d490f4e1",
+      "pushedAt": "2026-06-10T02:04:57.155000+00:00",
+      "lastRecordedPullTime": "2026-06-11T07:14:36.774000+00:00",
+      "sizeBytes": 16377969
+    },
+    {
+      "source": "quay.io/jetstack/cert-manager-controller:v1.19.5",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/quay/jetstack/cert-manager-controller:v1.19.5",
+      "repository": "quay/jetstack/cert-manager-controller",
+      "tag": "v1.19.5",
+      "digest": "sha256:79b40df51fe7be69fb4294942391230430a122818b21619655fe3a16c50c3dcc",
+      "pushedAt": "2026-06-10T02:02:09.183000+00:00",
+      "lastRecordedPullTime": "2026-06-11T07:14:36.535000+00:00",
+      "sizeBytes": 23562849
+    },
+    {
+      "source": "quay.io/jetstack/cert-manager-controller:v1.20.2",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/quay/jetstack/cert-manager-controller:v1.20.2",
+      "repository": "quay/jetstack/cert-manager-controller",
+      "tag": "v1.20.2",
+      "digest": "sha256:fe0623d7d04a382c888f03343a3a2da716e0d96ad3d5d790c0ebcbcb2a4329a5",
+      "pushedAt": "2026-06-10T02:01:44.706000+00:00",
+      "lastRecordedPullTime": "2026-06-11T06:42:39.082000+00:00",
+      "sizeBytes": 23615442
+    },
+    {
+      "source": "quay.io/jetstack/cert-manager-webhook:v1.19.5",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/quay/jetstack/cert-manager-webhook:v1.19.5",
+      "repository": "quay/jetstack/cert-manager-webhook",
+      "tag": "v1.19.5",
+      "digest": "sha256:26fd536762ecfabb4288aa6c2406f635aae04f7ef0e815514bfa24b48f3c96bf",
+      "pushedAt": "2026-06-10T02:04:46.231000+00:00",
+      "lastRecordedPullTime": "2026-06-11T06:42:39.172000+00:00",
+      "sizeBytes": 19927973
+    },
+    {
+      "source": "quay.io/jetstack/cert-manager-webhook:v1.20.2",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/quay/jetstack/cert-manager-webhook:v1.20.2",
+      "repository": "quay/jetstack/cert-manager-webhook",
+      "tag": "v1.20.2",
+      "digest": "sha256:baf651128b9f05c426cbd5e60e2036bf382c99ca270f49d0757d6f7d2452f4e5",
+      "pushedAt": "2026-06-10T02:02:38.873000+00:00",
+      "lastRecordedPullTime": "2026-06-11T06:42:39.135000+00:00",
+      "sizeBytes": 19479101
+    },
+    {
+      "source": "quay.io/prometheus/alertmanager:v0.31.1",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/quay/prometheus/alertmanager:v0.31.1",
+      "repository": "quay/prometheus/alertmanager",
+      "tag": "v0.31.1",
+      "digest": "sha256:88b605de9aba0410775c1eb3438f951115054e0d307f23f274a4c705f51630c1",
+      "pushedAt": "2026-06-10T02:00:52.734000+00:00",
+      "lastRecordedPullTime": "2026-06-11T07:14:36.125000+00:00",
+      "sizeBytes": 39156813
+    },
+    {
+      "source": "quay.io/prometheus/alertmanager:v0.32.2",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/quay/prometheus/alertmanager:v0.32.2",
+      "repository": "quay/prometheus/alertmanager",
+      "tag": "v0.32.2",
+      "digest": "sha256:b85533a2eb45865835315810315f6951331b2dbc8c93a6cf9a51e156a006a706",
+      "pushedAt": "2026-06-10T01:52:02.247000+00:00",
+      "lastRecordedPullTime": "2026-06-11T06:42:38.717000+00:00",
+      "sizeBytes": 36961551
+    },
+    {
+      "source": "quay.io/prometheus/blackbox-exporter:v0.27.0",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/quay/prometheus/blackbox-exporter:v0.27.0",
+      "repository": "quay/prometheus/blackbox-exporter",
+      "tag": "v0.27.0",
+      "digest": "sha256:a50c4c0eda297baa1678cd4dc4712a67fdea713b832d43ce7fcc5f9bea05094d",
+      "pushedAt": "2026-06-10T01:54:32.210000+00:00",
+      "lastRecordedPullTime": "2026-06-11T07:14:36.411000+00:00",
+      "sizeBytes": 17612968
+    },
+    {
+      "source": "quay.io/prometheus/blackbox-exporter:v0.28.0",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/quay/prometheus/blackbox-exporter:v0.28.0",
+      "repository": "quay/prometheus/blackbox-exporter",
+      "tag": "v0.28.0",
+      "digest": "sha256:e753ff9f3fc458d02cca5eddab5a77e1c175eee484a8925ac7d524f04366c2fc",
+      "pushedAt": "2026-06-10T01:54:42.337000+00:00",
+      "lastRecordedPullTime": "2026-06-11T06:42:38.840000+00:00",
+      "sizeBytes": 18342208
+    },
+    {
+      "source": "quay.io/prometheus/node-exporter:v1.10.2",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/quay/prometheus/node-exporter:v1.10.2",
+      "repository": "quay/prometheus/node-exporter",
+      "tag": "v1.10.2",
+      "digest": "sha256:337ff1d356b68d39cef853e8c6345de11ce7556bb34cda8bd205bcf2ed30b565",
+      "pushedAt": "2026-06-10T01:54:03.095000+00:00",
+      "lastRecordedPullTime": "2026-06-11T06:42:38.816000+00:00",
+      "sizeBytes": 14018066
+    },
+    {
+      "source": "quay.io/prometheus/node-exporter:v1.11.1",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/quay/prometheus/node-exporter:v1.11.1",
+      "repository": "quay/prometheus/node-exporter",
+      "tag": "v1.11.1",
+      "digest": "sha256:0f422f62c15f154af8d8572b23d623aebfb10cec73a5c654d18f911f3f9df241",
+      "pushedAt": "2026-06-10T01:53:32.200000+00:00",
+      "lastRecordedPullTime": "2026-06-11T06:42:38.720000+00:00",
+      "sizeBytes": 14306601
+    },
+    {
+      "source": "quay.io/prometheus/prometheus:latest",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/quay/prometheus/prometheus:latest",
+      "repository": "quay/prometheus/prometheus",
+      "tag": "latest",
+      "digest": "sha256:69f5241418838263316593f7274a304b095c40bcf22e57272865da91bd60a8ac",
+      "pushedAt": "2026-06-09T08:19:01.492000+00:00",
+      "lastRecordedPullTime": "2026-06-11T07:14:36.247000+00:00",
+      "sizeBytes": 155513507
+    },
+    {
+      "source": "quay.io/prometheus/prometheus:v3.11.3",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/quay/prometheus/prometheus:v3.11.3",
+      "repository": "quay/prometheus/prometheus",
+      "tag": "v3.11.3",
+      "digest": "sha256:c0b857aead0d5793aa566adb8f49a9983d6f6031652098759d521a330cfa050f",
+      "pushedAt": "2026-06-10T01:53:00.014000+00:00",
+      "lastRecordedPullTime": "2026-06-11T07:14:36.143000+00:00",
+      "sizeBytes": 152914904
+    },
+    {
+      "source": "quay.io/prometheus/prometheus:v3.12.0",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/quay/prometheus/prometheus:v3.12.0",
+      "repository": "quay/prometheus/prometheus",
+      "tag": "v3.12.0",
+      "digest": "sha256:69f5241418838263316593f7274a304b095c40bcf22e57272865da91bd60a8ac",
+      "pushedAt": "2026-06-09T08:19:01.492000+00:00",
+      "lastRecordedPullTime": "2026-06-11T07:14:36.247000+00:00",
+      "sizeBytes": 155513507
+    },
+    {
+      "source": "rabbitmq:4.2.7",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/rabbitmq:4.2.7",
+      "repository": "dockerhub/library/rabbitmq",
+      "tag": "4.2.7",
+      "digest": "sha256:693b21a9c09d26ca817e9b30520a5a958f90c191ee6938cd7c5f34b4e8b4dda1",
+      "pushedAt": "2026-06-10T15:09:23.302000+00:00",
+      "lastRecordedPullTime": "2026-06-11T07:14:45.005000+00:00",
+      "sizeBytes": 116050826
+    },
+    {
+      "source": "rabbitmq:4.2.7-alpine",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/rabbitmq:4.2.7-alpine",
+      "repository": "dockerhub/library/rabbitmq",
+      "tag": "4.2.7-alpine",
+      "digest": "sha256:1c3b8c44251747ed3e80d83354a9ae836b4c8c3bb35981397a1fec87346624ea",
+      "pushedAt": "2026-06-10T15:05:48.446000+00:00",
+      "lastRecordedPullTime": "2026-06-11T06:42:41.768000+00:00",
+      "sizeBytes": 84102385
+    },
+    {
+      "source": "rabbitmq:4.3.1",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/rabbitmq:4.3.1",
+      "repository": "dockerhub/library/rabbitmq",
+      "tag": "4.3.1",
+      "digest": "sha256:9eb488eb2457ee51d281e907fa0263482a57ad033f2acb85d67e0b5a2ce1ed92",
+      "pushedAt": "2026-06-10T02:15:25.918000+00:00",
+      "lastRecordedPullTime": "2026-06-11T06:42:40.966000+00:00",
+      "sizeBytes": 116026316
+    },
+    {
+      "source": "rabbitmq:4.3.1-alpine",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/rabbitmq:4.3.1-alpine",
+      "repository": "dockerhub/library/rabbitmq",
+      "tag": "4.3.1-alpine",
+      "digest": "sha256:89444b4c97a5469ea5300ecb7e55d32a0c1552102e562131b40aea84aafc97d1",
+      "pushedAt": "2026-06-10T02:15:39.234000+00:00",
+      "lastRecordedPullTime": "2026-06-11T07:14:44.816000+00:00",
+      "sizeBytes": 84068938
+    },
+    {
+      "source": "redis:7",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/redis:7",
+      "repository": "dockerhub/library/redis",
+      "tag": "7",
+      "digest": "sha256:d3be87a1060455213a204d2b0a7f04d45d19a16a98e85b3c37b7c33b5f0c489e",
+      "pushedAt": "2026-06-09T08:19:31.232000+00:00",
+      "lastRecordedPullTime": "2026-06-09T08:24:21.195000+00:00",
+      "sizeBytes": 48602612
+    },
+    {
+      "source": "redis:7.4.9",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/redis:7.4.9",
+      "repository": "dockerhub/library/redis",
+      "tag": "7.4.9",
+      "digest": "sha256:784b8c7b5ab4424a1d460fe5d33328882940e9c7c32270e626f2e4d2f3cae634",
+      "pushedAt": "2026-06-11T08:04:21.455000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 48602612
+    },
+    {
+      "source": "redis:8.6.4",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/redis:8.6.4",
+      "repository": "dockerhub/library/redis",
+      "tag": "8.6.4",
+      "digest": "sha256:ab54792107f8f098e4cae764611a8773e2121e805344446be03739ae2a977bdb",
+      "pushedAt": "2026-06-11T06:49:43.254000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 53410362
+    },
+    {
+      "source": "redis:8.6.4-alpine3.23",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/redis:8.6.4-alpine3.23",
+      "repository": "dockerhub/library/redis",
+      "tag": "8.6.4-alpine3.23",
+      "digest": "sha256:d103b9cd0b54b98b2c38e2b19220ee7adfe4b0fb22c406baa75f321179da2f00",
+      "pushedAt": "2026-06-10T02:03:46.576000+00:00",
+      "lastRecordedPullTime": "2026-06-10T15:01:12.203000+00:00",
+      "sizeBytes": 34505476
+    },
+    {
+      "source": "redis:8.8.0",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/redis:8.8.0",
+      "repository": "dockerhub/library/redis",
+      "tag": "8.8.0",
+      "digest": "sha256:aa049e689e141a4358ad1d4562dc49c88a89fbab711fd8fcc33f684c80b26301",
+      "pushedAt": "2026-06-11T01:28:58.130000+00:00",
+      "lastRecordedPullTime": "2026-06-11T06:42:41.351000+00:00",
+      "sizeBytes": 54275774
+    },
+    {
+      "source": "redis:8.8.0-alpine3.23",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/redis:8.8.0-alpine3.23",
+      "repository": "dockerhub/library/redis",
+      "tag": "8.8.0-alpine3.23",
+      "digest": "sha256:09160599abd229764c0fb44cb6be640294e1d360a54b19985ab4843dcf2d90f1",
+      "pushedAt": "2026-06-11T03:49:13.807000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 37652326
+    },
+    {
+      "source": "registry.k8s.io/coredns/coredns:v1.13.2",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/registryk8sio/coredns/coredns:v1.13.2",
+      "repository": "registryk8sio/coredns/coredns",
+      "tag": "v1.13.2",
+      "digest": "sha256:94caebb89dcfb9d2c4be45bfda34410a3e1092458fbbbc0284365c9e4c9a7818",
+      "pushedAt": "2026-06-10T01:48:48.289000+00:00",
+      "lastRecordedPullTime": "2026-06-11T06:42:42.703000+00:00",
+      "sizeBytes": 23670533
+    },
+    {
+      "source": "registry.k8s.io/coredns/coredns:v1.14.3",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/registryk8sio/coredns/coredns:v1.14.3",
+      "repository": "registryk8sio/coredns/coredns",
+      "tag": "v1.14.3",
+      "digest": "sha256:884b72dd6d2f7d367902af420605e0288dffedb0516ce29330423ae3f8f5c6fa",
+      "pushedAt": "2026-06-10T01:50:34.920000+00:00",
+      "lastRecordedPullTime": "2026-06-11T07:14:42.248000+00:00",
+      "sizeBytes": 23538037
+    },
+    {
+      "source": "registry.k8s.io/ingress-nginx/controller:v1.14.5",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/registryk8sio/ingress-nginx/controller:v1.14.5",
+      "repository": "registryk8sio/ingress-nginx/controller",
+      "tag": "v1.14.5",
+      "digest": "sha256:af3312d040dbe8d503001a1094b248e8be372f70f317a4bc35f81fb312bff3a8",
+      "pushedAt": "2026-06-10T01:49:40.410000+00:00",
+      "lastRecordedPullTime": "2026-06-11T06:42:42.824000+00:00",
+      "sizeBytes": 115970005
+    },
+    {
+      "source": "registry.k8s.io/ingress-nginx/controller:v1.15.1",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/registryk8sio/ingress-nginx/controller:v1.15.1",
+      "repository": "registryk8sio/ingress-nginx/controller",
+      "tag": "v1.15.1",
+      "digest": "sha256:594ceea76b01c592858f803f9ff4d2cb40542cae2060410b2c95f75907d659e1",
+      "pushedAt": "2026-06-10T01:50:14.928000+00:00",
+      "lastRecordedPullTime": "2026-06-11T07:14:42.277000+00:00",
+      "sizeBytes": 115970021
+    },
+    {
+      "source": "registry.k8s.io/kube-proxy:v1.35.5",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/registryk8sio/kube-proxy:v1.35.5",
+      "repository": "registryk8sio/kube-proxy",
+      "tag": "v1.35.5",
+      "digest": "sha256:e0e870b4d819cdd2999bfd223c64342d1533851e3a36f63a8bce1919e51e3904",
+      "pushedAt": "2026-06-10T01:50:25.590000+00:00",
+      "lastRecordedPullTime": "2026-06-11T07:14:42.498000+00:00",
+      "sizeBytes": 25696735
+    },
+    {
+      "source": "registry.k8s.io/kube-proxy:v1.36.1",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/registryk8sio/kube-proxy:v1.36.1",
+      "repository": "registryk8sio/kube-proxy",
+      "tag": "v1.36.1",
+      "digest": "sha256:a96b6e12863ef766d18f69afaad7a5329220c37ce21cb232bcb58362d284f3f7",
+      "pushedAt": "2026-06-10T01:49:19.999000+00:00",
+      "lastRecordedPullTime": "2026-06-11T06:42:42.937000+00:00",
+      "sizeBytes": 28851001
+    },
+    {
+      "source": "registry.k8s.io/metrics-server/metrics-server:v0.7.2",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/registryk8sio/metrics-server/metrics-server:v0.7.2",
+      "repository": "registryk8sio/metrics-server/metrics-server",
+      "tag": "v0.7.2",
+      "digest": "sha256:ffcb2bf004d6aa0a17d90e0247cf94f2865c8901dcab4427034c341951c239f9",
+      "pushedAt": "2026-06-10T01:48:54.803000+00:00",
+      "lastRecordedPullTime": "2026-06-11T07:14:42.480000+00:00",
+      "sizeBytes": 19490074
+    },
+    {
+      "source": "registry.k8s.io/metrics-server/metrics-server:v0.8.1",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/registryk8sio/metrics-server/metrics-server:v0.8.1",
+      "repository": "registryk8sio/metrics-server/metrics-server",
+      "tag": "v0.8.1",
+      "digest": "sha256:b2d2efaf5ac3b366ed0f839d2412a2c4279d4fc2a2a733f12c52133faed36c41",
+      "pushedAt": "2026-06-10T01:49:08.840000+00:00",
+      "lastRecordedPullTime": "2026-06-11T07:14:42.404000+00:00",
+      "sizeBytes": 22545264
+    },
+    {
+      "source": "registry.k8s.io/pause:3.10.2",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/registryk8sio/pause:3.10.2",
+      "repository": "registryk8sio/pause",
+      "tag": "3.10.2",
+      "digest": "sha256:f548e0e8e3dc1896ca956272154dde3314e8cc4fde0a57577ee9fa1c63f5baf4",
+      "pushedAt": "2026-06-10T01:50:50.202000+00:00",
+      "lastRecordedPullTime": "2026-06-11T07:14:42.539000+00:00",
+      "sizeBytes": 196109583
+    },
+    {
+      "source": "registry.k8s.io/pause:3.9",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/registryk8sio/pause:3.9",
+      "repository": "registryk8sio/pause",
+      "tag": "3.9",
+      "digest": "sha256:7031c1b283388d2c2e09b57badb803c05ebed362dc88d84b480cc47f72a21097",
+      "pushedAt": "2026-06-09T08:17:03.053000+00:00",
+      "lastRecordedPullTime": "2026-06-11T06:42:42.703000+00:00",
+      "sizeBytes": 307636494
+    },
+    {
+      "source": "ruby:3.4.9",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/ruby:3.4.9",
+      "repository": "dockerhub/library/ruby",
+      "tag": "3.4.9",
+      "digest": "sha256:439b61ca7ef0e20da3848a2d53a7ef9970018517c7cfacd1ab234964c9887b1a",
+      "pushedAt": "2026-06-11T01:28:48.230000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 501410242
+    },
+    {
+      "source": "ruby:3.4.9-alpine3.24",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/ruby:3.4.9-alpine3.24",
+      "repository": "dockerhub/library/ruby",
+      "tag": "3.4.9-alpine3.24",
+      "digest": "sha256:810119abf153eb04b0c837d47780ebaf2133cbd5a3de83497f6b8dc036cc148b",
+      "pushedAt": "2026-06-11T06:48:31.004000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 46271999
+    },
+    {
+      "source": "ruby:4.0.5",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/ruby:4.0.5",
+      "repository": "dockerhub/library/ruby",
+      "tag": "4.0.5",
+      "digest": "sha256:bd5075f77ac998fa5b61e37842717d1a29482b0e02ab74e2a2a8ae371d121b32",
+      "pushedAt": "2026-06-11T01:27:48.938000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 507603792
+    },
+    {
+      "source": "ruby:4.0.5-alpine3.24",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/ruby:4.0.5-alpine3.24",
+      "repository": "dockerhub/library/ruby",
+      "tag": "4.0.5-alpine3.24",
+      "digest": "sha256:130af23e14f6884c833b2a37d2431e460f94a00af76f2afafd610800054f14a4",
+      "pushedAt": "2026-06-11T02:38:00.486000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 53136163
+    },
+    {
+      "source": "rust:1.95.0",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/rust:1.95.0",
+      "repository": "dockerhub/library/rust",
+      "tag": "1.95.0",
+      "digest": "sha256:f49565f188ee00bc2a18dd418183f2c5f23ef7d6e691890517ed341a598f67c3",
+      "pushedAt": "2026-06-11T03:24:32.859000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 730821472
+    },
+    {
+      "source": "rust:1.95.0-alpine3.22",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/rust:1.95.0-alpine3.22",
+      "repository": "dockerhub/library/rust",
+      "tag": "1.95.0-alpine3.22",
+      "digest": "sha256:064dfc925d68d1a63f4fd2871bd7dc6e6ea56692989a487185855d62885d90aa",
+      "pushedAt": "2026-06-11T01:23:32.871000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 357924578
+    },
+    {
+      "source": "rust:1.96.0",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/rust:1.96.0",
+      "repository": "dockerhub/library/rust",
+      "tag": "1.96.0",
+      "digest": "sha256:fb328f0f58becb23ba1719940a2c94ece8b0b48afa837d05b79ef64bc1e18f6e",
+      "pushedAt": "2026-06-11T01:20:30.767000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 731757895
+    },
+    {
+      "source": "rust:1.96.0-alpine3.24",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/rust:1.96.0-alpine3.24",
+      "repository": "dockerhub/library/rust",
+      "tag": "1.96.0-alpine3.24",
+      "digest": "sha256:33578e16b6e0e87babdb3ad572074ff32b62d10df02d1910ebfa24b2437e9e92",
+      "pushedAt": "2026-06-11T01:25:26.549000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 349476738
+    },
+    {
+      "source": "traefik:v3.6.20",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/traefik:v3.6.20",
+      "repository": "dockerhub/library/traefik",
+      "tag": "v3.6.20",
+      "digest": "sha256:cc1799c50550f730f686df9b368e690f9199542787db8d1dd328a7c3779f6eea",
+      "pushedAt": "2026-06-10T02:28:22.650000+00:00",
+      "lastRecordedPullTime": "2026-06-10T15:01:45.343000+00:00",
+      "sizeBytes": 53221653
+    },
+    {
+      "source": "traefik:v3.6.21",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/traefik:v3.6.21",
+      "repository": "dockerhub/library/traefik",
+      "tag": "v3.6.21",
+      "digest": "sha256:e9ad2ada010742d2f91586a56f9ebb8355a2ceae7fb2973ef1c1877c7890e176",
+      "pushedAt": "2026-06-11T01:18:12.426000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 53220846
+    },
+    {
+      "source": "traefik:v3.7.4",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/traefik:v3.7.4",
+      "repository": "dockerhub/library/traefik",
+      "tag": "v3.7.4",
+      "digest": "sha256:fcdef599e6259359833dd2e1d49f9e964f66825d69bd3dd468f51102ce013d03",
+      "pushedAt": "2026-06-10T02:28:23.065000+00:00",
+      "lastRecordedPullTime": "2026-06-10T15:01:45.342000+00:00",
+      "sizeBytes": 53014360
+    },
+    {
+      "source": "traefik:v3.7.5",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/traefik:v3.7.5",
+      "repository": "dockerhub/library/traefik",
+      "tag": "v3.7.5",
+      "digest": "sha256:d6858791f9e74df44ca4014166647c41cdc2abd3bf2a71b832ca4e1c6a91b257",
+      "pushedAt": "2026-06-11T01:18:11.529000+00:00",
+      "lastRecordedPullTime": "",
+      "sizeBytes": 53018330
+    },
+    {
+      "source": "ubuntu:25.10",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/ubuntu:25.10",
+      "repository": "dockerhub/library/ubuntu",
+      "tag": "25.10",
+      "digest": "sha256:4a9232cc47bf99defcc8860ef6222c99773330367fcecbf21ba2edb0b810a31e",
+      "pushedAt": "2026-06-10T02:13:39.456000+00:00",
+      "lastRecordedPullTime": "2026-06-10T15:01:44.369000+00:00",
+      "sizeBytes": 39599221
+    },
+    {
+      "source": "ubuntu:26.04",
+      "target": "150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/ubuntu:26.04",
+      "repository": "dockerhub/library/ubuntu",
+      "tag": "26.04",
+      "digest": "sha256:f3d28607ddd78734bb7f71f117f3c6706c666b8b76cbff7c9ff6e5718d46ff64",
+      "pushedAt": "2026-06-10T02:09:18.654000+00:00",
+      "lastRecordedPullTime": "2026-06-10T15:01:44.383000+00:00",
+      "sizeBytes": 46601850
+    }
+  ]
+}

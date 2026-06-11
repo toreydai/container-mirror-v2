@@ -1,0 +1,72 @@
+version: 1
+
+creds:
+  - registry: 150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn
+    user: AWS
+    pass: "{{env \"ECR_PASSWORD\"}}"
+
+defaults:
+  parallel: 8
+  interval: 24h
+  ratelimit:
+    min: 10
+    retry: 5m
+
+sync:
+  # nginx: 1.26=stable, 1.27=mainline; source via ECR Public to avoid DockerHub rate limit
+  - source: public.ecr.aws/docker/library/nginx:1.26
+    target: 150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/nginx:1.26
+    type: image
+
+  - source: public.ecr.aws/docker/library/nginx:1.26-alpine
+    target: 150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/nginx:1.26-alpine
+    type: image
+
+  - source: public.ecr.aws/docker/library/nginx:1.27
+    target: 150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/nginx:1.27
+    type: image
+
+  - source: public.ecr.aws/docker/library/nginx:1.27-alpine
+    target: 150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/nginx:1.27-alpine
+    type: image
+
+  - source: public.ecr.aws/docker/library/redis:7.4.9
+    target: 150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/redis:7.4.9
+    type: image
+
+  - source: public.ecr.aws/docker/library/busybox:1.36
+    target: 150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/dockerhub/library/busybox:1.36
+    type: image
+
+  - source: registry.k8s.io/pause:3.9
+    target: 150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/registryk8sio/pause:3.9
+    type: image
+
+  - source: public.ecr.aws/amazonlinux/amazonlinux:2023
+    target: 150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/ecrpublic/amazonlinux/amazonlinux:2023
+    type: image
+
+  - source: quay.io/prometheus/prometheus:v3.12.0
+    target: 150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/quay/prometheus/prometheus:v3.12.0
+    type: image
+
+  - source: ghcr.io/kyverno/kyverno:v1.18.1
+    target: 150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/ghcr/kyverno/kyverno:v1.18.1
+    type: image
+
+  # distroless: 官方只发布 :latest，无具体版本 tag
+  - source: gcr.io/distroless/base-debian12:latest
+    target: 150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/gcr/distroless/base-debian12:latest
+    type: image
+
+  - source: gcr.io/distroless/java21-debian12:latest
+    target: 150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/gcr/distroless/java21-debian12:latest
+    type: image
+
+  - source: gcr.io/distroless/python3-debian12:latest
+    target: 150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/gcr/distroless/python3-debian12:latest
+    type: image
+
+  - source: gcr.io/distroless/nodejs20-debian12:latest
+    target: 150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn/gcr/distroless/nodejs20-debian12:latest
+    type: image

@@ -1,0 +1,28 @@
+# 每周定时同步镜像清单
+# 由 scripts/tools.py list 自动生成，请勿手动编辑
+# 最后更新：2026-06-11
+# 共 14 个镜像
+
+## public.ecr.aws
+public.ecr.aws/docker/library/nginx:1.26
+public.ecr.aws/docker/library/nginx:1.26-alpine
+public.ecr.aws/docker/library/nginx:1.27
+public.ecr.aws/docker/library/nginx:1.27-alpine
+public.ecr.aws/docker/library/redis:7.4.9
+public.ecr.aws/docker/library/busybox:1.36
+public.ecr.aws/amazonlinux/amazonlinux:2023
+
+## registry.k8s.io
+registry.k8s.io/pause:3.9
+
+## Quay
+quay.io/prometheus/prometheus:v3.12.0
+
+## GHCR
+ghcr.io/kyverno/kyverno:v1.18.1
+
+## GCR
+gcr.io/distroless/base-debian12:latest
+gcr.io/distroless/java21-debian12:latest
+gcr.io/distroless/python3-debian12:latest
+gcr.io/distroless/nodejs20-debian12:latest

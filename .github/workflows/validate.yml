@@ -1,0 +1,46 @@
+name: validate-container-mirror
+
+on:
+  pull_request:
+    paths:
+      - "regsync.yml"
+      - "required-images.txt"
+      - "required-images-weekly.txt"
+  push:
+    branches:
+      - main
+    paths:
+      - "regsync.yml"
+      - "required-images.txt"
+      - "required-images-weekly.txt"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      - run: python3 scripts/tools.py validate regsync.yml
+        env:
+          ECR_REGISTRY: ${{ vars.ECR_REGISTRY || '150430853770.dkr.ecr.cn-northwest-1.amazonaws.com.cn' }}
+      - run: python3 scripts/tools.py check-requests required-images.txt
+      - run: python3 scripts/tools.py lint-weekly required-images-weekly.txt
+
+      - name: Update sync-list.txt
+        if: github.event_name == 'push'
+        run: |
+          python3 scripts/tools.py list regsync.yml sync-list.txt
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add sync-list.txt
+          if git diff --cached --quiet; then
+            echo "sync-list.txt unchanged"
+          else
+            git commit -m "chore: update sync-list.txt [skip ci]"
+            git push
+          fi

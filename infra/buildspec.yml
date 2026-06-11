@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - curl -fsSL https://github.com/regclient/regclient/releases/download/v0.11.5/regsync-linux-amd64 -o /usr/local/bin/regsync
+      - chmod +x /usr/local/bin/regsync
+
+  pre_build:
+    commands:
+      - export ECR_PASSWORD=$(AWS_ACCESS_KEY_ID=$CHINA_AK AWS_SECRET_ACCESS_KEY=$CHINA_SK
+          AWS_DEFAULT_REGION=cn-northwest-1
+          aws ecr get-login-password --region cn-northwest-1)
+      - AWS_ACCESS_KEY_ID=$CHINA_AK AWS_SECRET_ACCESS_KEY=$CHINA_SK
+          aws s3 cp s3://$REPORT_BUCKET/sync-configs/$RUN_ID/$REGISTRY_BATCH.yml /tmp/regsync-batch.yml
+          --region cn-northwest-1
+
+  build:
+    commands:
+      - regsync once -c /tmp/regsync-batch.yml

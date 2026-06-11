@@ -1,0 +1,61 @@
+# 每周自动追版本同步清单
+# 只写镜像名，不带 tag。每周定时运行时自动查询 registry 获取最新稳定版本并同步。
+# 新版本发布后无需人工修改，下次每周定时自动同步。
+#
+# 格式：镜像名（不带 tag）
+# 支持：docker.io / registry.k8s.io / quay.io / ghcr.io / gcr.io / public.ecr.aws
+
+# ── 基础 OS / Runtime ────────────────────────────────────────────────────────
+public.ecr.aws/docker/library/alpine
+public.ecr.aws/docker/library/debian
+public.ecr.aws/docker/library/ubuntu
+public.ecr.aws/docker/library/busybox
+
+# ── Web / 代理 ──────────────────────────────────────────────────────────────
+public.ecr.aws/docker/library/nginx
+public.ecr.aws/docker/library/httpd
+public.ecr.aws/docker/library/haproxy
+public.ecr.aws/docker/library/traefik
+
+# ── 应用运行时 ───────────────────────────────────────────────────────────────
+public.ecr.aws/docker/library/node
+public.ecr.aws/docker/library/python
+public.ecr.aws/docker/library/golang
+public.ecr.aws/docker/library/php
+public.ecr.aws/docker/library/ruby
+public.ecr.aws/docker/library/rust
+
+# ── 数据库 ──────────────────────────────────────────────────────────────────
+public.ecr.aws/docker/library/mysql
+public.ecr.aws/docker/library/postgres
+public.ecr.aws/docker/library/mariadb
+public.ecr.aws/docker/library/mongo
+public.ecr.aws/docker/library/redis
+public.ecr.aws/docker/library/memcached
+
+# ── 消息队列 ─────────────────────────────────────────────────────────────────
+public.ecr.aws/docker/library/rabbitmq
+
+# ── Kubernetes 核心组件 ──────────────────────────────────────────────────────
+registry.k8s.io/pause
+registry.k8s.io/coredns/coredns
+registry.k8s.io/metrics-server/metrics-server
+registry.k8s.io/ingress-nginx/controller
+registry.k8s.io/kube-proxy
+
+# ── 可观测性：Prometheus 生态 ─────────────────────────────────────────────────
+quay.io/prometheus/prometheus
+quay.io/prometheus/alertmanager
+quay.io/prometheus/node-exporter
+quay.io/prometheus/blackbox-exporter
+
+# ── 可观测性：Grafana 生态 ────────────────────────────────────────────────────
+docker.io/grafana/grafana
+
+# ── GitOps / 持续部署 ────────────────────────────────────────────────────────
+quay.io/argoproj/argocd
+
+# ── 证书管理 ─────────────────────────────────────────────────────────────────
+quay.io/jetstack/cert-manager-controller
+quay.io/jetstack/cert-manager-webhook
+quay.io/jetstack/cert-manager-cainjector
