@@ -65,7 +65,7 @@ quay.io/prometheus/prometheus
 
 | 文档 | 说明 |
 |---|---|
-| [docs/migration.md](docs/migration.md) | 在现有账号全新部署 v2 的操作手册 |
+| [docs/deployment.md](docs/deployment.md) | 在现有账号全新部署 v2 的操作手册 |
 | [docs/background.md](docs/background.md) | 与老仓库的关系、升级起因、设计思路和效果对比 |
 | [docs/architecture.md](docs/architecture.md) | 架构、两条同步流程、registry 映射 |
 | [docs/usage.md](docs/usage.md) | 镜像使用方式（Docker / K8s / Helm / ECS / Webhook） |
@@ -111,4 +111,8 @@ MIT - see the [LICENSE](LICENSE) file for details.
 
 ## 免责声明
 
-本项目仅供学习与技术参考，不构成生产部署方案。运行过程中会创建 AWS 资源并产生费用，请在实验结束后及时清理。作者不对因使用本项目产生的任何费用或损失承担责任。本项目与 Amazon Web Services 无官方关联，相关服务的可用性与定价以 AWS 官方文档为准。生产环境使用前请根据实际需求进行安全评估与调整。
+- 本项目仅供学习与技术参考，不构成生产部署方案。
+- 运行过程中会创建 AWS 资源并产生费用，请在实验结束后及时清理。
+- 作者不对因使用本项目产生的任何费用或损失承担责任。
+- 本项目与 Amazon Web Services 无官方关联，相关服务的可用性与定价以 AWS 官方文档为准。
+- 生产环境使用前请根据实际需求进行安全评估与调整。

@@ -101,4 +101,4 @@ flowchart TB
 | `docker.elastic.co/*` | `elastic/` |
 | Global ECR（`602401143452.*`） | `amazonecr/` |
 
-更详细的操作步骤、AWS 资源清单和维护手册见 [background.md](background.md)、[usage.md](usage.md)、[operations.md](operations.md)、[migration.md](migration.md)。
+更详细的操作步骤、AWS 资源清单和维护手册见 [background.md](background.md)、[usage.md](usage.md)、[operations.md](operations.md)、[deployment.md](deployment.md)。
